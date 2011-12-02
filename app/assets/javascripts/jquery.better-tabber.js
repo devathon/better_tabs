@@ -25,7 +25,7 @@ var Tabber = {
   init : function(name, options){
     options = options || {};
     var tabClass =   options.tabClass || 'tabs' ;
-    
+
     var tabs = $( name + '> .' + tabClass);
     var tab_datas = $(name + '> .data > div:not(.mask)').addClass('hidden');
     var current = $(name + ' >  .' + tabClass + ' > li.active > a').attr('href');
@@ -69,12 +69,12 @@ var Tabber = {
       var tab = window.location.hash;
     else
       var tab = current;
-      
+
     console.log( current, $(current, '.data') );
-    
+
     if( current )
       $( current, '.data').removeClass('hidden');
-      
+
     $('a[href="' + tab +'"]').trigger('click');
 
   }
