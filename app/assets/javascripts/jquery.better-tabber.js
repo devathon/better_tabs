@@ -66,11 +66,9 @@ var Tabber = {
     });
 
     if( window.location.hash )
-      var tab = window.location.hash;
+      var tab = "."+window.location.hash.substring(1);
     else
       var tab = current;
-
-    console.log( current, $(current, '.data') );
 
     if( current )
       $( current, '.data').removeClass('hidden');

@@ -3,7 +3,7 @@
 // provide good support for dynamic content and tabs addition
 
 var Pills = function(name){
-    var ul = $( name + '> ul.tabs');
+    var ul = $( name + '> ul.pills');
     var region = $(name + '> .data');
 
     this.tabs = $('li', ul);
@@ -12,9 +12,15 @@ var Pills = function(name){
     this.name = name;
     var self = this;
 
-    this.addTab = function(id, anchor, options ){
+    this.addTab = function(id, type, anchor, options ){
       var link = $('<li></li>').html(anchor)
-      ul.append( link );
+
+      if(type == "prepend") {
+        // prepend before last link
+        $("ul.pills").children().last().before(link);
+      } else {
+        ul.append( link );
+      }
 
       anchor.bind('click', this.switchHandle);
 
