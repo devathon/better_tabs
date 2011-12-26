@@ -67,15 +67,16 @@ var Tabber = {
 		
 		var tab = null;
 		
-    if( window.location.hash )
-      tab =  window.location.hash.substring(1);
+		if( window.location.hash )
+      tab =  window.location.hash;
     else
       tab = current;
-
+			
     if( current )
       $( current, '.data').removeClass('hidden');
-
-    $('a[href="' + tab +'"]').trigger('click');
+		
+		
+    $('a[href="' + tab +'"]').click();
 
   }
 }
