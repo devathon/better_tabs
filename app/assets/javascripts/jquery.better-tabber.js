@@ -64,11 +64,13 @@ var Tabber = {
 
         return false;
     });
-
+		
+		var tab = null;
+		
     if( window.location.hash )
-      var tab = "."+window.location.hash.substring(1);
+      tab =  window.location.hash.substring(1);
     else
-      var tab = current;
+      tab = current;
 
     if( current )
       $( current, '.data').removeClass('hidden');
