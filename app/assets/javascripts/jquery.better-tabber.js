@@ -28,7 +28,9 @@ var Tabber = {
 
     var tabs = $( name + '> .' + tabClass);
     var tab_datas = $(name + '> .data > div:not(.mask)').addClass('hidden');
-    var current = $(name + ' >  .' + tabClass + ' > li.active > a').attr('href');
+    var current_el = $(name + ' >  .' + tabClass + ' > li.active > a')
+    
+    var current = current_el.attr('for') || current_el.attr('href')
 
     $('li a', tabs).unbind('click').bind('click', function(ev){
         ev.stopPropagation();
